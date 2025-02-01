@@ -1,13 +1,13 @@
 import NotFoundPage from "@/app/not-found";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 export default async function ProductDetailPage({
   params,
 }: {
   params: { id: string };
 }) {
   const response = await fetch(
-    "http://localhost:3000/api/products/" + params.id
+    `${process.env.NEXT_PUBLIC_SITE_URL}/api/products/` + params.id
   );
 
   const product = await response.json();
